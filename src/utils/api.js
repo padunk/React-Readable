@@ -1,5 +1,6 @@
 
-const url = 'http://localhost:3001';
+// const url = 'http://localhost:3001';
+const url = 'https://us-central1-react-redux-readable.cloudfunctions.net/app';
 const headers = { 
   'Authorization': 'readable-project',
   'Accept': 'application/json',

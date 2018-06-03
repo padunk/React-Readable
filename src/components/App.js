@@ -1,5 +1,8 @@
 import './App.css';
+
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+
 import PostsMain from './PostsMain';
 import PostDetail from './PostDetail';
 import NavigationBar from './NavigationBar';
@@ -10,7 +13,6 @@ import AddComment from './AddComment';
 import EditComment from './EditComment';
 import DeleteComment from './DeleteComment';
 import NotFound from './NotFound';
-import { Switch, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   render () {
