@@ -20,15 +20,15 @@ class App extends Component {
       <div className='App'>
         <NavigationBar />
         <Switch>
-          <Route exact path='/' component={() => <PostsMain />} />
-          <Route exact path='/:category' component={(props) => <PostsMain {...props} /> } />
-          <Route exact path='/:category/:post_id' component={(props) => <PostDetail {...props} /> } />
+          <Route exact path='/' component={PostsMain} />
+          <Route exact path='/:category' render={(props) => <PostsMain {...props} /> } />
+          <Route exact path='/:category/:post_id' render={(props) => <PostDetail {...props} /> } />
           <Route path='/add/post/new' component={AddPost} />
-          <Route exact path='/:category/edit/:post_id' component={(props) => <EditPost {...props} /> } />
-          <Route exact path='/:category/delete/:post_id' component={(props) => <DeletePost {...props} /> } />
+          <Route exact path='/:category/edit/:post_id' render={(props) => <EditPost {...props} /> } />
+          <Route exact path='/:category/delete/:post_id' render={(props) => <DeletePost {...props} /> } />
           <Route exact path='/:category/:post_id/comments/new' component={AddComment} />
-          <Route exact path='/:category/:post_id/edit/comment/:comment_id' component={(props) => <EditComment {...props} /> } />
-          <Route exact path='/:category/:post_id/delete/comment/:comment_id' component={(props) => <DeleteComment {...props} /> } />
+          <Route exact path='/:category/:post_id/edit/comment/:comment_id' render={(props) => <EditComment {...props} /> } />
+          <Route exact path='/:category/:post_id/delete/comment/:comment_id' render={(props) => <DeleteComment {...props} /> } />
           <Route path='*' component={NotFound} />
         </Switch>
       </div>
