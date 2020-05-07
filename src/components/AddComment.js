@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import { loadAddComment } from '../actions';
 
 class AddComment extends Component {
@@ -13,8 +13,8 @@ class AddComment extends Component {
     const author = this.inputAuthor.value;
     const parentId = this.props.match.params.post_id;
 
-    this.props.loadAddComment(id, timestamp, body, author, parentId)
-    this.props.history.goBack();
+    this.props.loadAddComment(id, timestamp, body, author, parentId);
+    this.props.history.push(`/${this.props.match.params.category}/${this.props.match.params.post_id}`);
   };
 
   render () {

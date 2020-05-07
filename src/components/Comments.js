@@ -8,6 +8,7 @@ import {
 import EditButton from './EditButton';
 import DeleteButton from './DeleteButton';
 import { timeConverter } from '../utils/helpers';
+import Spacer from './Spacer';
 
 class Comments extends Component {
 
@@ -32,12 +33,14 @@ class Comments extends Component {
         <div className='comment-div'>
           <ul className='comment-ul'>
             {this.props.commentCount === 0
-            ? <h4 style={{color: 'white', textAlign: 'center'}}>
-              No comment on this post yet. Why don't add one?</h4>
+            ? <p style={{color: 'white', textAlign: 'center'}}>
+              No comment on this post yet. Why don't add one?</p>
             : Object.keys(comments).map(c => (
               <li key={comments[c].id} className='comment-list'>
-                <p style={{paddingBottom: '20px'}}><em>{comments[c].body}</em></p>
+                <p><em>{comments[c].body}</em></p>
+                <Spacer height={20} />
                 <hr />
+                <Spacer height={10} />
                 <p>Comment by: <strong>{comments[c].author}</strong></p>
                 <small style={{ color: "hsla(160, 80%, 20%, 0.8)" }}>
                   Date: {timeConverter(comments[c].timestamp)}

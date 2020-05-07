@@ -16,15 +16,20 @@ class PostDetail extends Component {
     this.props.loadPosts(id);
   }
 
+  componentDidUpdate() {
+    const id = this.props.match.params.post_id;
+    this.props.loadPosts(id);
+  }
+
   render() {
     const { post } = this.props;
     const { loadVotePost } = this.props;
 
     return (
       <div className='main-body'>
-        {post === {} ? (
+        {post === undefined ? (
           <Loading />
-        ) : post === undefined ? (
+        ) : post === {} ? (
           <NotFound />
         ) : (
           <div className='post-detail'>

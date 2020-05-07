@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import { loadCategories, loadAddPost } from '../actions';
 
 class AddPost extends Component {
@@ -21,10 +21,11 @@ class AddPost extends Component {
     const category = e.target.category.value;
 
     if(category === 'none') {
-      alert('Please change your category')
+      alert('Please change your category');
+      return;
     } else {
       this.props.loadAddPost(id, timestamp, title, body, author, category)
-      this.props.history.goBack();
+      this.props.history.push('/');
     }
   }
 
@@ -45,7 +46,7 @@ class AddPost extends Component {
               <option 
                 value={cat.name === 'all' ? 'none' : cat.name}
                 key={cat.path + idx}
-                disabled={cat.name === 'all' ? 'true' : null}
+                disabled={cat.name === 'all' ? true : false}
               >
                 {_.capitalize(cat.name)}
               </option>

@@ -12,7 +12,6 @@ class EditButton extends Component {
                   ? `/${this.props.category}/edit/${this.props.id}`
                   : `/${this.props.category}/${this.props.parentId}/edit/comment/${this.props.id}`
                 }
-                {...this.props}
                 >
                 <button>Edit {_.capitalize(this.props.label)}</button>
               </Link>
