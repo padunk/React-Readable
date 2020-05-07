@@ -176,6 +176,8 @@ textarea:focus {
   margin: 10px;
   border-radius: 10px;
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .posts-list {
@@ -185,6 +187,7 @@ textarea:focus {
   margin: 7px;
   padding: 10px;
   border-radius: 10px;
+  max-width: 300px;
 }
 
 .post-title {
