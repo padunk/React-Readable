@@ -5,11 +5,11 @@ let db = {}
 const defaultData = {
   "8xf0y6ziyjabvozdd253nd": {
     id: '8xf0y6ziyjabvozdd253nd',
-    timestamp: 1467166872634,
+    timestamp: 1468479797190,
     title: 'Udacity is the best place to learn React',
     body: 'Everyone says so after all.',
     author: 'thingtwo',
-    category: 'react',
+    category: 'udacity',
     voteScore: 6,
     deleted: false,
     commentCount: 2
@@ -27,11 +27,11 @@ const defaultData = {
   },
   "6ni6ok3ym7mf1p33lnex": {
     id: '6ni6ok3ym7mf1p33lnex',
-    timestamp: 1468479797190,
-    title: 'Udacity React Nano Degree',
+    timestamp: 1467166872634,
+    title: 'React Nano Degree',
     body: 'The Best Place to learn React',
     author: 'thingthree',
-    category: 'udacity',
+    category: 'react',
     voteScore: 2,
     deleted: false,
     commentCount: 0
