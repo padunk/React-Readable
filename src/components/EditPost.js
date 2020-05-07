@@ -18,7 +18,7 @@ class EditPost extends Component {
 
     render () {
       const { post } = this.props;
-
+      console.log(this.props)
         return (
           <div className='edit-post'>          
             {post === null ? <Loading /> :

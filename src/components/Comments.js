@@ -36,10 +36,12 @@ class Comments extends Component {
               No comment on this post yet. Why don't add one?</h4>
             : Object.keys(comments).map(c => (
               <li key={comments[c].id} className='comment-list'>
-                <em>{comments[c].body}</em>
+                <p style={{paddingBottom: '20px'}}><em>{comments[c].body}</em></p>
                 <hr />
                 <p>Comment by: <strong>{comments[c].author}</strong></p>
-                <p>Date: {timeConverter(comments[c].timestamp)}</p>
+                <small style={{ color: "hsla(160, 80%, 20%, 0.8)" }}>
+                  Date: {timeConverter(comments[c].timestamp)}
+                </small>
                 <p>Vote: {comments[c].voteScore}</p>
                 <button onClick={() => this.props.loadVoteComment(comments[c].id, 'upVote')}>+</button>
                 <button onClick={() => this.props.loadVoteComment(comments[c].id, 'downVote')}>-</button>

@@ -32,7 +32,7 @@ class AddPost extends Component {
     const { categories } = this.props;
 
     return (
-      <div className='main-body'>
+      <div className='main-body add-post-wrapper'>
         <h2>Add New Post</h2>
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -59,7 +59,7 @@ class AddPost extends Component {
             <input 
               type='text' 
               name='author' 
-              required='true' ref={(input) => this.inputAuthor = input} />
+              required={true} ref={(input) => this.inputAuthor = input} />
           </label>
           <br />
           <label>
@@ -68,7 +68,7 @@ class AddPost extends Component {
             <input 
               type='text' 
               name='title' 
-              required='true' ref={(input) => this.inputTitle = input} />
+              required={true} ref={(input) => this.inputTitle = input} />
           </label>
           <br />
           <label>
@@ -76,10 +76,10 @@ class AddPost extends Component {
             <br />
             <textarea
               name='body' 
-              required='true' ref={(input) => this.inputBody = input} />
+              required={true} ref={(input) => this.inputBody = input} />
           </label>
           <br />
-          <input type='submit' value='Submit' />
+          <button type='submit'>Submit</button>
           <Link to='/'>
             <button>Cancel</button>
           </Link>

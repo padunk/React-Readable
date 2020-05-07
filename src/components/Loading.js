@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 var styles = {
     content: {
       textAlign: 'center',
-      fontSize: '35px'
+      fontSize: '35px',
+      color: 'darkgray'
     }
 };
 

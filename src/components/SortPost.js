@@ -12,8 +12,7 @@ class SortPost extends Component {
             defaultValue={'none'} 
             onChange={(e) => this.props.sortPosts(e.target.value)}
           >
-            <option value='none' disabled='true'>Sort By</option>
-            <option value='commentCount'>Most Comment</option>
+            <option defaultValue='commentCount'>Most Comment</option>
             <option value='timestamp'>Newest</option>
             <option value='title'>Title(A-Z)</option>
             <option value='voteScore'>Most Vote</option>

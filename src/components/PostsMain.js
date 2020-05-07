@@ -18,6 +18,14 @@ class PostsMain extends Component {
     : loadPostsByCategory(filterUrl)
   }
 
+  componentDidUpdate() {
+    const { filterUrl, loadPosts, loadPostsByCategory } = this.props;
+
+    filterUrl === 'all'
+    ? loadPosts()
+    : loadPostsByCategory(filterUrl)
+  }
+
   render() {
     return (
       <div className='main-body'>
