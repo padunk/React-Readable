@@ -22,7 +22,7 @@ class PostsList extends Component {
                 Created by: <strong>{posts[p].author}</strong>
               </p>
               <small style={{ color: "hsla(160, 80%, 20%, 0.8)" }}>
-                Date: <em>{timeConverter(posts[p].timestamp)}</em>
+                <em>({timeConverter(posts[p].timestamp)})</em>
               </small>
               <p>
                 Vote: <strong>{posts[p].voteScore}</strong>{" "}
