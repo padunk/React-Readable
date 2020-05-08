@@ -18,12 +18,26 @@ select[name='category'] {
   width: 100px;
 }
 
+fieldset {
+  padding: 10px;
+}
+
+legend {
+  font-size: medium;
+  padding-left: 10px;
+}
+
+label {
+  font-weight: 600;  
+}
+
 input[type="text"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
+  background-color: #f8f8f8;
   border-bottom: 2px solid gray;
 }
 input[type="text"]:focus {
@@ -38,6 +52,21 @@ input[type="submit"] {
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  font-family: inherit;
+}
+textarea:focus {
+  outline: none;
 }
 
 button {
@@ -68,18 +97,14 @@ button:hover {
   color: linen;
 }
 
-textarea {
-  width: 100%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
+.btn-cancel {
+  border: 2px solid rgb(240, 152, 10);
+  background-color: transparent;
+  transition: all 300ms;
 }
-textarea:focus {
-  border: none;
+.btn-cancel:hover {
+  border: 2px solid rgb(240, 152, 10);
+  background-color: rgb(240, 152, 10);
 }
 
 .navigation-menu {
@@ -204,10 +229,6 @@ textarea:focus {
   display: flex;
 }
 
-.edit-post {
-  margin: 20px;
-}
-
 .comment-ul {
   background-color: rgb(3, 94, 163);
   border-radius: 10px;
@@ -219,4 +240,10 @@ textarea:focus {
   padding: 10px;
   background-color: rgb(4, 189, 245);
   border-radius: 10px;
+}
+
+.form-edit {
+  width: 40vw;
+  min-width: 300px;
+  margin: 0 auto;
 }
