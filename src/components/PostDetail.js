@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loadPosts, loadVotePost } from "../actions";
+import _ from "lodash";
 import Loading from "./Loading";
 import Comments from "./Comments";
 import EditButton from "./EditButton";
@@ -14,6 +15,25 @@ class PostDetail extends Component {
   componentDidMount() {
     const id = this.props.match.params.post_id;
     this.props.loadPosts(id);
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if (!this.props.post) {
+      return true;
+    }
+    const timeStamp = _.isEqual(
+      this.props.post.timestamp,
+      nextProps.post.timestamp
+    );
+    const commentCount = _.isEqual(
+      this.props.post.commentCount,
+      nextProps.post.commentCount
+    );
+
+    if (timeStamp && commentCount) {
+      return false;
+    }
+    return true;
   }
 
   componentDidUpdate() {
@@ -53,16 +73,22 @@ class PostDetail extends Component {
               </button>
             </p>
             <div className='control-button-wrapper'>
-            <EditButton category={post.category} id={post.id} label={"post"} />
-            <DeleteButton
-              category={post.category}
-              id={post.id}
-              label={"post"}
-            />
+              <EditButton
+                category={post.category}
+                id={post.id}
+                label={"post"}
+              />
+              <DeleteButton
+                category={post.category}
+                id={post.id}
+                label={"post"}
+              />
             </div>
             <NewCommentButton category={post.category} id={post.id} />
             <Spacer height='50' />
-            <p>Comments: <strong>{post.commentCount}</strong></p>
+            <p>
+              Comments: <strong>{post.commentCount}</strong>
+            </p>
             <Spacer height='10' />
             <Comments
               id={post.id}
